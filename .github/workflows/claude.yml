@@ -1,11 +1,5 @@
 name: Claude GitHub Integration
-permissions:
-  id-token: write
-  contents: read
-  issues: write
-  pull-requests: write
-
-on: 
+on:
   issues:
     types: [opened, edited]
   issue_comment:
@@ -19,9 +13,4 @@ jobs:
   claude:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      - uses: anthropics/claude-code-action@main
-        with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY_CLAUDE }}
-          prompt: "Please analyze this GitHub issue/comment and provide a helpful response."
+      - run: echo "Claude workflow triggered"
