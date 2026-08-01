@@ -21,6 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - uses: anthropics/claude-code-action@v0.2.0
+      - uses: anthropics/claude-code-action@latest
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY_CLAUDE }}
+          prompt: "Please help with this GitHub issue or pull request."
