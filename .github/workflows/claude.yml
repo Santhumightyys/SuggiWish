@@ -21,8 +21,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - uses: anthropics/claude-code-action@v1
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY_CLAUDE }}
+      - uses: anthropics/claude-code-action@v0.2.0
         with:
-          prompt: "Analyze and respond to the user's request"
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY_CLAUDE }}
