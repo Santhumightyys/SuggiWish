@@ -20,4 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Claude workflow triggered"
+      
+      - uses: anthropics/claude-code-action@main
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY_CLAUDE }}
+          prompt: "Please analyze this GitHub issue/comment and provide a helpful response."
